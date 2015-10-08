@@ -1,0 +1,18 @@
+.center () {
+    .dsp-b();
+    .m-r(auto);
+    .m-l(auto);
+}
+
+.clearfix () {
+    *zoom: 1;
+
+    &:before,
+    &:after {
+        .dsp-content(" ");
+        .dsp-tbl();
+    }
+    &:after {
+        .float-c();
+    }
+}

@@ -1,0 +1,46 @@
+//background-color
+.bg-color (@color) { background-color: @color; }
+
+//background-image
+.bg-img (@path) { background-image: url(@path) }
+
+//background-repeat
+.bg-repeat () { background-repeat: repeat; }
+.bg-repeat-x () { background-repeat: repeat-x; }
+.bg-repeat-y () { background-repeat: repeat-y; }
+.bg-norepeat () { background-repeat: no-repeat; }
+
+//background-position
+.bg-pos (@xpos, @ypos) { background-position: @xpos @ypos; }
+.bg-center () { background-position: center center; }
+.bg-center-x () { background-position: center top; }
+.bg-center-y () { background-position: left center; }
+
+//background-size
+.bg-size (@width) { background-size: @width; }
+.bg-size (@width, @height) { background-size: @width @height; }
+.bg-cover () { background-size: cover; }
+.bg-contain () { background-size: contain; }
+
+//background-clip
+.bg-clip-bbox () { background-clip: border-box; }
+.bg-clip-pbox () { background-clip: padding-box; }
+.bg-clip-cbox () { background-clip: content-box; }
+
+.bg-none () { background: none; }
+
+//gradients
+.bg-grad (@startColor, @endColor) {
+    .bg-grad(0deg, 0%, @startColor, 100%, @endColor);
+}
+.bg-grad (@angle, @startColor, @endColor) {
+    .bg-grad(@angle, 0%, @startColor, 100%, @endColor);
+}
+.bg-grad (@angle, @start, @startColor, @end, @endColor) {
+    background: @startColor;
+    background: -moz-linear-gradient(unit(@angle,deg), @startColor @start, @endColor @end);
+    background: -webkit-linear-gradient(unit(@angle,deg), @startColor @start, @endColor @end);
+    background: -o-linear-gradient(unit(@angle,deg), @startColor @start, @endColor @end);
+    background: -ms-linear-gradient(unit(@angle,deg), @startColor @start, @endColor @end);
+    background: linear-gradient(unit(90+@angle,deg), @startColor @start, @endColor @end);
+}

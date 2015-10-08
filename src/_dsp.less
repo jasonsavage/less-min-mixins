@@ -1,0 +1,60 @@
+//display
+.dsp (@display) { display: @display; }
+
+//display types
+.dsp-i () { display: inline; }
+.dsp-ib () { display: inline-block; }
+
+.dsp-b () { display: block; }
+.dsp-n () { display: none; }
+
+//display types (uncommon)
+.dsp-tbl() { display: table; }
+
+.dsp-flex () { display: flex; }
+.dsp-iflex () { display: inline-flex; }
+
+//z-index
+.dsp-idx (@index) { z-index: @index; }
+
+//content
+.dsp-content (@content) { content: @content; }
+
+//opacity
+.dsp-alpha (@opacity) {
+    -webkit-opacity: @opacity;
+    opacity: @opacity;
+}
+
+//box sizing
+.dsp-bsize(@boxmodel) {
+    -webkit-box-sizing: @boxmodel;
+    -moz-box-sizing: @boxmodel;
+    -ms-box-sizing: @boxmodel;
+    box-sizing: @boxmodel;
+}
+
+//box-shadow
+.dsp-shadow (@boxShadow) {
+    -webkit-box-shadow: @boxShadow;
+    -moz-box-shadow:    @boxShadow;
+    box-shadow:         @boxShadow;
+}
+.dsp-shadow (@x, @y, @blur, @spread, @color) {
+    .dsp-shadow(@x @y @blur @spread @color);
+}
+.dsp-shadow-in (@x, @y, @blur, @spread, @color) {
+    .dsp-shadow(inset @x @y @blur @spread @color);
+}
+.dsp-shadow-angle (@angle, @distance, @blur, @spread, @color) {
+    @rad : @angle * (pi() / 180);
+    @x : round(@distance * cos(@rad));
+    @y : round(@distance * sin(@rad));
+    .dsp-shadow(@x @y @blur @spread @color);
+}
+.dsp-shadow-angle-in (@angle, @distance, @blur, @spread, @color) {
+    @rad : @angle * (pi() / 180);
+    @x : round(@distance * cos(@rad));
+    @y : round(@distance * sin(@rad));
+    .dsp-shadow(inset @x @y @blur @spread @color);
+}

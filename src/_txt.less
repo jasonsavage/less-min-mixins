@@ -1,0 +1,57 @@
+.txt(@fontFamily) { font-family: @fontFamily; }
+
+//font-size
+.txt-s (@size) { font-size: @size; }
+
+//font-size and bold
+.txt-sb (@size) {
+    .txt-s(@size);
+    .txt-b();
+}
+
+.txt-slh (@size, @lineHeight) {
+    .txt-s(@size);
+    .txt-lh(@lineHeight);
+}
+
+//font-weight
+.txt-b () { font-weight:bold; }
+
+//line-height (leading)
+.txt-lh (@lineHeight) { line-height: @lineHeight; }
+
+//letter-spacing (kerning)
+.txt-ls (@size) { letter-spacing: @size; }
+
+//color
+.txt-color (@color:#fff) { color: color; }
+
+// font styles
+.txt-i () { font-style:italic; }
+.txt-u () { text-decoration:underline; }
+.txt-x () { text-decoration:line-through; }
+
+// text transform
+.txt-upper () { text-transform: uppercase; }
+.txt-lower () { text-transform: lowercase; }
+.txt-cap () { text-transform: capitalize; }
+
+//text align
+.txt-l { text-align:left; }
+.txt-r { text-align:right; }
+.txt-c { text-align:center; }
+
+//text-shadow
+.txt-shadow (@textShadow) {
+    text-shadow: @textShadow;
+}
+.txt-shadow (@x, @y, @blur, @color) {
+    .txt-shadow(@x @y @blur @color);
+}
+.txt-shadow-angle (@angle, @distance, @blur, @color) {
+    @rad : @angle * (pi() / 180);
+    @x : round(@distance * cos(@rad));
+    @y : round(@distance * sin(@rad));
+    .txt-shadow(@x @y @blur @color);
+}
+

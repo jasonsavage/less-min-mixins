@@ -1,0 +1,33 @@
+//transform
+.trans(@transform) {
+    -webkit-transform: @transform;
+    -moz-transform: @transform;
+    -ms-transform: @transform;
+    transform: @transform;
+}
+
+//rotate
+.trans-r(@degrees) {
+    .trans (rotate(@degrees));
+}
+
+//scale
+.trans-s(@ratio) {
+    .trans (scale(@ratio));
+}
+
+//skew
+.trans-sk(@x, @y) {
+    .trans (skew(@x, @y));
+    -webkit-backface-visibility: hidden;
+}
+
+//translate
+.trans-t(@x, @y) {
+    .trans (translate(@x, @y));
+}
+
+//translate3d
+.trans-t3d(@x, @y, @z) {
+    .trans (translate3d(@x, @y, @z));
+}

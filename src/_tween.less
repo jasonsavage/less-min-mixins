@@ -1,0 +1,46 @@
+//transition
+//(tween so it's not confused with transform)
+.tween(@transition) {
+    -webkit-transition: @transition;
+    transition: @transition;
+}
+
+//transition-delay
+.tween-delay(@delay) {
+    -webkit-transition-delay: @delay;
+    transition-delay: @delay;
+}
+
+//transition-duration
+.tween-time (@duration) {
+    -webkit-transition-duration: @duration;
+    transition-duration: @duration;
+}
+
+//transition-property
+.tween-prop (@property) {
+    -webkit-transition-property: @property;
+    transition-property: @property;
+}
+
+//transition-timing-functions
+.tween-linear() {
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+}
+.tween-ease() {
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+.tween-ease-in() {
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+}
+.tween-ease-out() {
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.tween-ease-in-out() {
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+}
